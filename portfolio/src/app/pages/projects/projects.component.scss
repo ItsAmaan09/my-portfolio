@@ -1,0 +1,40 @@
+.projects {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  .project-card {
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge {
+      background-color: #00bcd4 !important;
+      color: #fff;
+    }
+
+    .btn-primary {
+      background-color: #00bcd4;
+      border: none;
+    }
+
+    .btn-outline-primary {
+      border-color: #00bcd4;
+      color: #00bcd4;
+      &:hover {
+        background-color: #00bcd4;
+        color: #fff;
+      }
+    }
+  }
+}
