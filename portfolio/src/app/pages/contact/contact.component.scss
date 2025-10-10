@@ -1,0 +1,29 @@
+.contact {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  .form-control {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+    &:focus {
+      border-color: #00bcd4;
+      box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    }
+  }
+
+  .btn-primary {
+    background-color: #00bcd4;
+    border: none;
+    &:hover {
+      background-color: #0097a7;
+    }
+  }
+}

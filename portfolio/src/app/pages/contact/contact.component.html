@@ -1,1 +1,29 @@
-<p>contact works!</p>
+<section class="contact py-5" [attr.data-theme]="theme">
+  <div class="container">
+    <h2 class="text-center mb-4">Get in Touch</h2>
+    <p class="text-center mb-5">Have a question or want to work together? Fill out the form below.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="contactData.name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="contactData.email" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea rows="4" class="form-control" name="message" [(ngModel)]="contactData.message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -20,3 +20,8 @@ body, .container, .hero, .card {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
 }
+
+[data-theme='dark'] .form-control {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+}
