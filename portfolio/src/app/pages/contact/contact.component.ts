@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule,ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -21,16 +21,43 @@ export class ContactComponent {
     this.themeService.theme$.subscribe((t) => (this.theme = t));
   }
 
-  onSubmit() {
+
+  async onSubmit(event: Event) {
+    debugger
+    event.preventDefault(); // prevent native form submit
+
     if (
-      this.contactData.name &&
-      this.contactData.email &&
-      this.contactData.message
+      !this.contactData.name ||
+      !this.contactData.email ||
+      !this.contactData.message
     ) {
-      alert(`Thank you, ${this.contactData.name}! Your message has been sent.`);
-      this.contactData = { name: '', email: '', message: '' };
-    } else {
-      alert('Please fill all fields.');
+      alert('Please fill all fields!');
+      return;
+    }
+
+    const payload = {
+      access_key: 'b67d4ce7-58be-49b0-b2bd-d0168596efe5', // Replace with Web3Forms access key
+      name: this.contactData.name,
+      email: this.contactData.email,
+      message: this.contactData.message,
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        alert('✅ Message sent successfully!');
+        this.contactData = { name: '', email: '', message: '' };
+      } else {
+        alert('❌ Failed to send message, try again later.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('❌ Error sending message!');
     }
   }
 }
