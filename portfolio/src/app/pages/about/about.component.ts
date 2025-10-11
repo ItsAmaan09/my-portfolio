@@ -10,7 +10,7 @@ import { ThemeService } from '../../core/services/theme.service';
 export class AboutComponent {
   theme = 'light';
   experienceYears = 3;
-  description = `I am a passionate Full Stack Developer with ${this.experienceYears} years of experience in building modern web applications using Angular, Node.js, and related technologies. I love creating clean, responsive, and interactive user experiences.`;
+  description = `I am a passionate Full Stack Developer with ${this.experienceYears} years of experience in building modern web applications using .Net Core, Angular, Node.js, and related technologies. I love creating clean, responsive, and interactive user experiences.`;
   constructor(private themeService: ThemeService) {
     this.themeService.theme$.subscribe((t) => (this.theme = t));
   }

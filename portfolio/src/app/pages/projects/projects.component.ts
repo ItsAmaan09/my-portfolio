@@ -13,25 +13,25 @@ export class ProjectsComponent {
 
   projects = [
     {
-      title: 'Portfolio Website',
-      desc: 'Personal portfolio built with Angular, Bootstrap, and Netlify deployment.',
-      tech: ['Angular', 'Bootstrap', 'Netlify'],
-      github: 'https://github.com/yourname/portfolio',
-      live: 'https://your-portfolio.netlify.app'
+      title: 'Tic Tac Toe Game',
+      desc: 'A simple Tic Tac Toe game built with Angular and also this is a PWA app.',
+      tech: ['Angular', 'TypeScript'],
+      github: 'https://github.com/ItsAmaan09/Tic-Tac-Toe',
+      live: 'https://t3-play.netlify.app/'
     },
     {
-      title: 'Task Manager App',
-      desc: 'Full-stack task management app with Angular frontend and Node.js backend.',
-      tech: ['Angular', 'Node.js', 'MongoDB'],
-      github: 'https://github.com/yourname/task-manager',
-      live: 'https://taskmanager-demo.netlify.app'
+      title: 'Guess the number',
+      desc: 'A number guessing game with Angular frontend.',
+      tech: ['Angular', 'TypeScript'],
+      github: 'https://github.com/ItsAmaan09/guess-the-number',
+      live: 'https://guess-the-number-sigma-vert.vercel.app/'
     },
     {
       title: 'E-Commerce Store',
-      desc: 'Responsive shopping site with cart and product filters.',
-      tech: ['Angular', 'Express', 'MongoDB'],
-      github: 'https://github.com/yourname/ecommerce',
-      live: 'https://shop-demo.netlify.app'
+      desc: 'Responsive shopping site with cart and product filters and search functionality.',
+      tech: ['Angular', 'NestJS', 'MySQL', 'Sequelize', 'TypeScript'],
+      github: '',
+      live: ''
     }
   ];
 

@@ -10,16 +10,31 @@
             <p class="card-text flex-grow-1">{{ project.desc }}</p>
 
             <div class="tech-list mb-3">
-              <span *ngFor="let t of project.tech" class="badge bg-primary me-1">{{ t }}</span>
+              <span
+                *ngFor="let t of project.tech"
+                class="badge bg-primary me-1"
+                >{{ t }}</span
+              >
             </div>
 
             <div class="mt-auto">
-              <a [href]="project.github" target="_blank" class="btn btn-outline-primary btn-sm me-2">
-                <i class="fa fa-github me-1"></i> Code
-              </a>
-              <a [href]="project.live" target="_blank" class="btn btn-primary btn-sm">
-                <i class="fa fa-external-link me-1"></i> Live
-              </a>
+              <div *ngIf="project.github != ''">
+                <a
+                  [href]="project.github"
+                  target="_blank"
+                  class="btn btn-outline-primary btn-sm me-2"
+                >
+                  <i class="fa-brands fa-github me-1"></i> Code
+                </a>
+                <a
+                  [href]="project.live"
+                  target="_blank"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fa fa-external-link me-1"></i> Live
+                </a>
+              </div>
+              <div *ngIf="project.live == ''">project coming soon...</div>
             </div>
           </div>
         </div>
