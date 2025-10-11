@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../../core/services/theme.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -21,19 +22,11 @@ export class ContactComponent {
     this.themeService.theme$.subscribe((t) => (this.theme = t));
   }
 
-
-  async onSubmit(event: Event) {
-    debugger
-    event.preventDefault(); // prevent native form submit
-
-    if (
-      !this.contactData.name ||
-      !this.contactData.email ||
-      !this.contactData.message
-    ) {
-      alert('Please fill all fields!');
-      return;
-    }
+  async onSubmit(form: NgForm) {
+    // if (form.invalid) {
+    //   form.control.markAllAsTouched(); // show errors
+    //   return;
+    // }
 
     const payload = {
       access_key: 'b67d4ce7-58be-49b0-b2bd-d0168596efe5', // Replace with Web3Forms access key
