@@ -20,6 +20,14 @@ export class ProjectsComponent {
       live: 'https://t3-play.netlify.app/'
     },
     {
+      title: 'Food Truck Manager',
+      desc: 'Full stack web app with CRUD functionality with JWT auth.',
+      tech: ['React', 'Express.js', 'MongoDB', 'JavaScript'],
+      github: 'https://github.com/ItsAmaan09/food-truck-frontend',
+      backendCode: 'https://github.com/ItsAmaan09/food-truck',
+      live: 'https://food-truck-wtwh.vercel.app/'
+    },
+    {
       title: 'Guess the number',
       desc: 'A number guessing game with Angular frontend.',
       tech: ['Angular', 'TypeScript'],
